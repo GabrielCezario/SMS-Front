@@ -1,6 +1,6 @@
 import React from 'react'
-import Loginfield from './loginField'
-import Passwordfield from './passwordField'
+import Loginfield from '../../componentes/loginField'
+import Passwordfield from '../../componentes/passwordField'
 
 import './main.css'
 import '../../App.css'

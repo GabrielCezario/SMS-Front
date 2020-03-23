@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Namefield from './nameField';
-import Usernamefield from './userNameField';
-import Emailfield from './emailField';
+import Namefield from '../../componentes/nameField';
+import Usernamefield from '../../componentes/userNameField';
+import Emailfield from '../../componentes/emailField';
 import Passwordfield from './passwordField';
 
 export default class MainsignUp extends React.Component{
