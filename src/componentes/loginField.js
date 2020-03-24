@@ -7,28 +7,42 @@ export default class Loginfield extends React.Component{
 
         this.state = {
             value:'',
-            isValid: false
+            modified : false
         }
     }
 
-    getValue = (event) => {
-        this.setState({value: event.target.value});
+    // Converte valores nulos, undefineds, 0 ou string vazia para false.
+    // validateField = ()=> Boolean(this.state.value);
 
-        if(this.state.value){
-            this.setState({isValid: true});
-        } else {
-            this.setState({isValid: false});
-        }
+    // getValue = (event) => {
+    //     let state = this.state;
+    //     // Verifica se alguem digitou alguma coisa no campo
+    //     // Caso digitou comece a validar os erros.
+    //     if(state.modified)
+    //         this.state.modified = true;
+    //     state.value = event.target.value;
+    // }
+
+    validateField = ()=> Boolean(this.state.value);
+
+    getValue = (event) => {
+        let state = event.target.value;
+    
+        if(!state){
+            this.state.modified = true;
+        } 
+
+        this.setState({value: state});
     }
 
     render(){
         return(
             <div className="form-group">
                 <label htmlFor="txtLogin">Login</label>
-                <input type="text" value={this.state.value} className={"form-control " + (this.state.isValid ? '': 'is-invalid')} id="txtLogin" onChange={this.getValue}/>
+                <input type="text" value={this.state.value} className={"form-control " + (this.validateField() ? '': 'is-invalid')} id="txtLogin" onChange={this.getValue}/>
                 
                 <div className="invalid-feedback">
-                    Você deve preencher o campo de Login.
+                    You must fill login field.
                 </div>
             </div>
         );

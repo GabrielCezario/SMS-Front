@@ -1,0 +1,18 @@
+#imgPitangSignUp{
+    width: 11vw;
+    height: 8vh;
+  
+    margin-top: 5vh;
+}
+
+form{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#formSignUp{
+    background-color: white;
+    box-shadow: 0 0 5px #bdbdbd;
+
+    width: 25vw;
+}

@@ -7,26 +7,30 @@ export default class Emailfield extends React.Component{
 
         this.state = {
             value:'',
-            isValid: false
+            modified : false
         }
-    }    
-
-    getValue = (props) => {
-        this.setState({isValid: props.valid});
     }
 
+    validateField = ()=> Boolean(this.state.value);
+
     getValue = (event) => {
-        this.setState({value: event.target.value});
+        let state = event.target.value;
+    
+        if(!state){
+            this.state.modified = true;
+        } 
+
+        this.setState({value: state});
     }
 
     render(){
         return(
             <div className="form-group">
                 <label htmlFor="txtEmail">E-mail</label>
-                <input type="text" value={this.state.value} className={"form-control" + (this.state.isValid ? 'is-invalid': '')} id="txtEmail" onChange={this.getValue}/>
+                <input type="text" value={this.state.value} className={"form-control " + (this.validateField() ? '': 'is-invalid')} id="txtEmail" onChange={this.getValue}/>
 
                 <div className="invalid-feedback">
-                    Você deve preencher o campo de E-mail.
+                You must fill E-mail field.
                 </div>
             </div>
         );

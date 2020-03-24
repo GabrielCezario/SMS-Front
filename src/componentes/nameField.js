@@ -2,24 +2,35 @@ import React from 'react';
 
 export default class Namefield extends React.Component{
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
-        this.state = {value:''}
+        this.state = {
+            value:'',
+            modified : false
+        }
     }
 
+    validateField = ()=> Boolean(this.state.value);
+
     getValue = (event) => {
-        this.setSate({value: event.target.value});
+        let state = event.target.value;
+    
+        if(!state){
+            this.state.modified = true;
+        } 
+
+        this.setState({value: state});
     }
 
     render(){
         return(
             <div className="form-group">
                 <label htmlFor="txtName">Name</label>
-                <input type="text" className="form-control" id="txtName" onChange={}/>
+                <input type="text" id="txtName" value={this.state.value} className={"form-control " + (this.validateField() ? '': 'is-invalid')} onChange={this.getValue}/>
                 
                 <div className="invalid-feedback">
-                    Você deve preencher o campo de Name.
+                You must fill Name field.
                 </div>
             </div>
         );

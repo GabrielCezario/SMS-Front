@@ -2,10 +2,11 @@ import React from 'react'
 import Loginfield from '../../componentes/loginField'
 import Passwordfield from '../../componentes/passwordField'
 
-import './main.css'
+import './login.css'
 import '../../App.css'
 
-export default class Maincontent extends React.Component{
+export default class Login extends React.Component{
+
     render(){
         return(
             <div>
@@ -38,7 +39,7 @@ export default class Maincontent extends React.Component{
                     </form>
 
                     <div className="form-group">
-                        <a href="#"> <button type="button" className="btn btn-outline-secondary font-weight-bold" id="btn-login">SIGN UP</button> </a>
+                        <button type="button" onClick={this.props.onRegister} className="btn btn-outline-secondary font-weight-bold" id="btn-login">SIGN UP</button>
                     </div>
                 </div>
             </div>

@@ -1,14 +1,9 @@
-
-
 #formLogin{
     background-color: white;
     box-shadow: 0 0 5px #bdbdbd;
 
     width: 25vw;
-    height: 55vh;
 }
-
-
 
 span{
     color: #ffc801;
@@ -31,5 +26,6 @@ form label{
 #btn-login{
     width: 94%;
     margin-left: 10px;
+    margin-bottom: 10px;
 }
 

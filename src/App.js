@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 
-import Maincontent from './pages/login/main'
+import HomePage from './pages/home/HomePage'
 
 function App() {
   return (
     <div className="App"> 
         <main className="d-flex align-items-center justify-content-center h-100">
-          <Maincontent></Maincontent>
+          <HomePage></HomePage>
         </main>
     </div>
   );
