@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import Namefield from '../../componentes/nameField';
 import Usernamefield from '../../componentes/userNameField';
@@ -7,7 +8,7 @@ import Passwordfield from './passwordField';
 
 import './signUp.css'
 
-export default class MainsignUp extends React.Component{
+export default class SignUp extends React.Component{
 
     render(){
         return(
@@ -17,14 +18,14 @@ export default class MainsignUp extends React.Component{
 
                 <div id="formSignUp">
 
-                <div id="line">
+                    <div id="line">
 
-                </div>
+                    </div>
 
-                <div className="form-group">
-                    <button className= "btn btn-outline-secondary font-weight-bold ml-2" onClick={this.props.onLogin}>Back</button>
-                    <span>SIGN UP</span>
-                </div>
+                    <div className="form-group">
+                        <Link to="/"> <button className= "btn btn-outline-secondary font-weight-bold ml-2">Back</button> </Link>
+                        <span>SIGN UP</span>
+                    </div>
 
                     <form>
                         <div>

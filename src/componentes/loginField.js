@@ -11,18 +11,6 @@ export default class Loginfield extends React.Component{
         }
     }
 
-    // Converte valores nulos, undefineds, 0 ou string vazia para false.
-    // validateField = ()=> Boolean(this.state.value);
-
-    // getValue = (event) => {
-    //     let state = this.state;
-    //     // Verifica se alguem digitou alguma coisa no campo
-    //     // Caso digitou comece a validar os erros.
-    //     if(state.modified)
-    //         this.state.modified = true;
-    //     state.value = event.target.value;
-    // }
-
     validateField = ()=> Boolean(this.state.value);
 
     getValue = (event) => {
