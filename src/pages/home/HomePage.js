@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from '../login/Login'
-import SignUp from '../signup/SignUp'
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 export default class HomePage extends React.Component{
 
@@ -20,20 +20,27 @@ export default class HomePage extends React.Component{
         this.setState({showLogin: false});
     }
 
-    renderLogin(){
-        console.log("Chamou a função Login")
-        return <Login onRegister={() => this.goToLogin()} />
-    }
+    // renderLogin(){
+    //     console.log("Chamou a função Login")
+    //     return <Login onRegister={() => this.goToLogin()} />
+    // }
 
-    renderSignUp(){
-        console.log("Chamou a função SignUp")
-        return <SignUp onLogin={() => this.goToRegister()}/>
-    }
+    // renderSignUp(){
+    //     console.log("Chamou a função SignUp")
+    //     return <SignUp onLogin={() => this.goToRegister()}/>
+    // }
 
     render(){
         return(
             <div className="home-page">
-                {(this.state.showLogin ? this.renderSignUp() : this.renderLogin())}
+
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path="/" component={Login}/>
+                    </Switch>
+                </BrowserRouter>
+
+                {/* {(this.state.showLogin ? this.renderSignUp() : this.renderLogin())} */}
             </div>
         );
     }

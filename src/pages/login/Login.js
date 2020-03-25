@@ -1,6 +1,9 @@
 import React from 'react'
-import Loginfield from '../../componentes/loginField'
-import Passwordfield from '../../componentes/passwordField'
+import { Switch, Route, BrowserRouter, Link } from 'react-router-dom';
+
+import Loginfield from '../../componentes/loginField';
+import Passwordfield from '../../componentes/passwordField';
+import MainsignUp from '../signup/SignUp';
 
 import './login.css'
 import '../../App.css'
@@ -10,6 +13,7 @@ export default class Login extends React.Component{
     render(){
         return(
             <div>
+
                 <h1 align="center"> <img id="imgPitang" src={require("../../img/loginImg/pitangLogo.png")}/> </h1>
                 
                 <div id="formLogin">
@@ -39,9 +43,15 @@ export default class Login extends React.Component{
                     </form>
 
                     <div className="form-group">
-                        <button type="button" onClick={this.props.onRegister} className="btn btn-outline-secondary font-weight-bold" id="btn-login">SIGN UP</button>
+                        <Link to="/SignUp"> <button type="button" className="btn btn-outline-secondary font-weight-bold" id="btn-login">SIGN UP</button> </Link>
                     </div>
                 </div>
+
+                <BrowserRouter>
+                    <Switch>
+                        <Route path="/SignUp" component={MainsignUp}/>
+                    </Switch>
+                </BrowserRouter>
             </div>
         );
     }
