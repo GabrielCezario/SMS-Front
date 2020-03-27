@@ -1,12 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 
-import Namefield from '../../componentes/nameField';
-import Usernamefield from '../../componentes/userNameField';
-import Emailfield from '../../componentes/emailField';
-import Passwordfield from './passwordField';
+import Namefield from '../../componentes/forms/nameField';
+import Usernamefield from '../../componentes/forms/userNameField';
+import Emailfield from '../../componentes/forms/emailField';
+import PasswordConfirmfield from '../../componentes/forms/passwordConfirmField';
+import pitangLogo from '../../img/loginImg/pitangLogo.png';
 
-import './signUp.css'
+import './style.css'
 
 export default class SignUp extends React.Component{
 
@@ -14,7 +16,7 @@ export default class SignUp extends React.Component{
         return(
             <div>
 
-                <h1 align="center"> <img id="imgPitangSignUp" src={require("../../img/loginImg/pitangLogo.png")}/> </h1>
+                <h1 align="center"> <img id="imgPitangSignUp" src={pitangLogo}/> </h1>
 
                 <div id="formSignUp">
 
@@ -23,7 +25,7 @@ export default class SignUp extends React.Component{
                     </div>
 
                     <div className="form-group">
-                        <Link to="/"> <button className= "btn btn-outline-secondary font-weight-bold ml-2">Back</button> </Link>
+                        <Link to="/"><button className= "btn btn-outline-secondary font-weight-bold ml-2"> <FaArrowLeft size={20}/> </button></Link>
                         <span>SIGN UP</span>
                     </div>
 
@@ -41,7 +43,7 @@ export default class SignUp extends React.Component{
                         </div>
 
                         <div>
-                            <Passwordfield></Passwordfield>
+                            <PasswordConfirmfield></PasswordConfirmfield>
                         </div>
 
                         <div className="form-check">

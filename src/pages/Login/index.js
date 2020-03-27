@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-import Loginfield from '../../componentes/loginField';
-import Passwordfield from '../../componentes/passwordField';
+import Loginfield from '../../componentes/forms/loginField';
+import Passwordfield from '../../componentes/forms/passwordField';
+import pitangLogo from '../../img/loginImg/pitangLogo.png';
 
-import './login.css'
+import './style.css'
 import '../../App.css'
 
 export default class Login extends React.Component{
@@ -13,7 +14,7 @@ export default class Login extends React.Component{
         return(
             <div>
 
-                <h1 align="center"> <img id="imgPitang" src={require("../../img/loginImg/pitangLogo.png")}/> </h1>
+                <h1 align="center"> <img id="imgPitang" src={pitangLogo}/> </h1>
                 
                 <div id="formLogin">
                     <div id="line">
@@ -42,7 +43,7 @@ export default class Login extends React.Component{
                     </form>
 
                     <div className="form-group">
-                        <Link to="/SignUp"> <button type="button" className="btn btn-outline-secondary font-weight-bold" id="btn-login">SIGN UP</button> </Link>
+                        <Link to="/register"> <button type="button" className="btn btn-outline-secondary font-weight-bold" id="btn-login">SIGN UP</button> </Link>
                     </div>
                 </div>
             </div>
