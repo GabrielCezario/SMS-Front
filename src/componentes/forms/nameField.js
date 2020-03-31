@@ -17,7 +17,7 @@ export default class Namefield extends React.Component{
         let state = event.target.value;
     
         if(!state){
-            this.state.modified = true;
+            this.setState({modified: true});
         } 
 
         this.setState({value: state});
@@ -27,10 +27,15 @@ export default class Namefield extends React.Component{
         return(
             <div className="form-group">
                 <label htmlFor="txtName">Name</label>
-                <input type="text" id="txtName" value={this.state.value} className={"form-control " + (this.validateField() ? '': 'is-invalid')} onChange={this.getValue}/>
+                <input
+                    type="text" id="txtName" 
+                    value={this.state.value} 
+                    className={"form-control " + (this.validateField() ? '': 'is-invalid')} 
+                    onChange={this.getValue}
+                />
                 
                 <div className="invalid-feedback">
-                You must fill Name field.
+                    You must fill Name field.
                 </div>
             </div>
         );

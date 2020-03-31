@@ -14,7 +14,7 @@ export default class Login extends React.Component{
         return(
             <div>
 
-                <h1 align="center"> <img id="imgPitang" src={pitangLogo}/> </h1>
+                <h1 align="center"> <img id="imgPitang" src={pitangLogo} alt="Pitang"/> </h1>
                 
                 <div id="formLogin">
                     <div id="line">

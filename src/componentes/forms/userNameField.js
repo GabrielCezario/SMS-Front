@@ -17,7 +17,8 @@ export default class Usernamefield extends React.Component{
         let state = event.target.value;
     
         if(!state){
-            this.state.modified = true;
+            // this.state.modified = true;
+            this.setState({modified: true});
         } 
 
         this.setState({value: state});
@@ -27,7 +28,13 @@ export default class Usernamefield extends React.Component{
         return(
             <div className="form-group">
                 <label htmlFor="txtUsername">Username</label>
-                <input type="text" id="txtUsername" value={this.state.value} className={"form-control " + (this.validateField() ? '': 'is-invalid')} onChange={this.getValue}/>
+                <input 
+                    type="text" 
+                    id="txtUsername" 
+                    value={this.state.value} 
+                    className={"form-control " + (this.validateField() ? '': 'is-invalid')} 
+                    onChange={this.getValue}
+                />
                 
                 <div className="invalid-feedback">
                     You must fill Username field.

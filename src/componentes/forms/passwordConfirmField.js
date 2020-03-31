@@ -17,7 +17,7 @@ export default class Passwordfield extends React.Component{
         let state = event.target.value;
     
         if(!state){
-            this.state.modified = true;
+            this.setState({modified: true});
         } 
 
         this.setState({value: state});
@@ -25,13 +25,26 @@ export default class Passwordfield extends React.Component{
 
     render(){
         return(
-            <div className="form-group">
-                <label htmlFor="txtPassword">Password</label>
-                <input type="password" value={this.state.value} className={"form-control " + (this.validateField() ? '': 'is-invalid')} id="txtPassword" onChange={this.getValue}/>
-                <input type="password" className="form-control mt-1 " id="txtConfirmPassword"/>
+            <div>
+                <div className="form-group">
+                    <label htmlFor="txtPassword">Password</label>
+                    <input 
+                        type="password" 
+                        value={this.state.value} 
+                        className={"form-control " + (this.validateField() ? '': 'is-invalid')} 
+                        id="txtPassword" 
+                        onChange={this.getValue}
+                    />
 
-                <div className="invalid-feedback">
-                    You must fill Password field.
+                    <input
+                        type="password" 
+                        className="form-control mt-1 " 
+                        id="txtConfirmPassword"
+                    />
+
+                    <div className="invalid-feedback">
+                        You must fill Password field.
+                    </div>
                 </div>
             </div>
         );
